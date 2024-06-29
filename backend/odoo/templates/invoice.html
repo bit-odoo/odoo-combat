@@ -1,115 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
         }
-        .invoice-box {
-            max-width: 800px;
+        .invoice {
+            max-width: 600px;
             margin: auto;
-            padding: 30px;
+            padding: 20px;
             border: 1px solid #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
             font-size: 16px;
             line-height: 24px;
             color: #555;
         }
-        .invoice-box table {
+        .invoice h2 {
+            text-align: center;
+        }
+        .invoice .client-details, .invoice .services {
+            margin-bottom: 20px;
+        }
+        .invoice .client-details p, .invoice .services p {
+            margin: 0;
+            padding: 0;
+        }
+        .invoice .services table {
             width: 100%;
-            line-height: inherit;
-            text-align: left;
             border-collapse: collapse;
         }
-        .invoice-box table td {
-            padding: 5px;
-            vertical-align: top;
+        .invoice .services table, .invoice .services th, .invoice .services td {
+            border: 1px solid #ddd;
         }
-        .invoice-box table tr td:nth-child(2) {
+        .invoice .services th, .invoice .services td {
+            padding: 8px;
+            text-align: left;
+        }
+        .invoice .total-amount {
             text-align: right;
-        }
-        .invoice-box table tr.top table td {
-            padding-bottom: 20px;
-        }
-        .invoice-box table tr.top table td.title {
-            font-size: 45px;
-            line-height: 45px;
-            color: #333;
-        }
-        .invoice-box table tr.information table td {
-            padding-bottom: 40px;
-        }
-        .invoice-box table tr.heading td {
-            background: #eee;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
-        }
-        .invoice-box table tr.details td {
-            padding-bottom: 20px;
-        }
-        .invoice-box table tr.item td {
-            border-bottom: 1px solid #eee;
-        }
-        .invoice-box table tr.item.last td {
-            border-bottom: none;
-        }
-        .invoice-box table tr.total td:nth-child(2) {
-            border-top: 2px solid #eee;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="invoice-box">
-        <table>
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <h2>Invoice</h2>
-                            </td>
-                            <td>
-                               
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                <b>Client Details</b><br>
-                                Name: test2<br>
-                                Mobile Number: 7046950546<br>
-                                Email: test2@gmail.com
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr class="heading">
-                <td>Service</td>
-                <td>Price</td>
-            </tr>
-            <tr class="item">
-                <td>old Tv</td>
-                <td>500</td>
-            </tr>
-            <tr class="item">
-                <td> Pick Up Charge</td>
-                <td>80</td>
-            </tr>
-            
-            <tr class="total">
-                <td></td>
-                <td>Total Amount: 420</td>
-            </tr>
-        </table>
+    <div class="invoice">
+        <h2>Invoice</h2>
+        <div class="client-details">
+            <p><strong>Client Details</strong></p>
+            <p>Name: {{ client_name }}</p>
+            <p>Mobile Number: {{ mobile_number }}</p>
+            <p>Email: {{ email }}</p>
+        </div>
+        <div class="services">
+            <p><strong>Services</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    <tr>
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="total-amount">
+            Total Amount: {{ total_amount }}
+        </div>
     </div>
 </body>
 </html>
