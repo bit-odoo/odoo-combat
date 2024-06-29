@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 const REACT_APP_SERVER = import.meta.env.VITE_REACT_APP_SERVER;
 import axios from "axios";
 import { redirect, useNavigate } from "react-router-dom";
@@ -12,6 +12,37 @@ function RecycleProfile() {
   const [state, setstate] = useState("");
   const [pincode,setpincode]=useState("");
   const [bnkname,setbnkname]=useState("");
+  const [isid,setisid]=useState(false);
+  const [data,setData]=useState([]);
+  useEffect(() => {
+
+
+    if(localStorage.getItem("rid")!==null){
+      const id =localStorage.getItem("rid");
+  axios
+  .get(`${REACT_APP_SERVER}/api/getRecycler/?rid=${id}`)
+  .then((data) => {
+    setData(data["data"]);
+    console.log(data["data"])
+    setEmail(data["data"][0]["fields"]["email"])
+    setbname(data["data"][0]["fields"]["businessname"])
+    setcontactno(data["data"][0]["fields"]["contactno"])
+    setcity(data["data"][0]["fields"]["city"])
+    setstate(data["data"][0]["fields"]["state"])
+    setpincode(data["data"][0]["fields"]["pincode"])
+    setbnkname(data["data"][0]["fields"]["bankaccountname"])
+    setbno(data["data"][0]["fields"]["bankaccountno"])
+    setifsc(data["data"][0]["fields"]["ifsc"])
+    setisid(true)
+   
+  })
+  .catch((error) => console.log(error));
+      
+    }
+      
+  
+},[]);
+
   
   const[bno,setbno]=useState("");
   const[ifsc,setifsc]=useState("");
@@ -44,6 +75,7 @@ function RecycleProfile() {
           setTimeout(() => {
             alert("Recycler details added successfully!");
             localStorage.setItem("rid", rid);
+            window.location.reload();
             
           }, 1000);
         } else {
@@ -172,9 +204,11 @@ function RecycleProfile() {
         </div>
       </form >
 
-      <div className='flex justify-center'>
+      {!isid?<div className='flex justify-center'>
         <button type="submit" onClick={handleSubmit} className='bg-black text-white py-2 px-4 my-5 rounded-md shadow-sm hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 w-40'>Save </button>
-      </div>
+      </div>:<></>}
+
+      
 
     </div >
   );

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
+from django.core import serializers
 
 # Create your views here.
 @csrf_exempt
@@ -98,5 +99,16 @@ def getRecyclers(request):
         return HttpResponse(
             json.dumps({"msg": "Recycler details added successfully.","rid":user.id}),
         )
+
+@csrf_exempt
+def getRecycler(request):
+    if request.method == 'GET':   
+        id=request.GET.get('rid')
+        user = Recycler.objects.get(id=id)
+        client_serialized = serializers.serialize("json", [user])
+                 
+        return HttpResponse(
+            client_serialized,content_type="application/json"
+        )     
 
         
