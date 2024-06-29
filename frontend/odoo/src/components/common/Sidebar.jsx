@@ -2,11 +2,11 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Calendar, FileText, LogOut, Minimize2, Menu } from 'lucide-react';
-import logo from '/images/Recycle-E.svg';
 import { FaRecycle } from "react-icons/fa6";
 import { FaUserAlt } from "react-icons/fa";
 import { RiGitPullRequestFill } from "react-icons/ri";
 import { redirect, useNavigate } from "react-router-dom";
+import logo from "../../assets/images/Recycle-E.svg"
 
 const SidebarContext = React.createContext();
 
