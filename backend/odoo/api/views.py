@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
+from xhtml2pdf import pisa
+from django.core import serializers
+from django.template.loader import get_template
+from django.conf import settings
+from django.core.mail import EmailMessage
 
 # Create your views here.
 @csrf_exempt
@@ -62,5 +67,101 @@ def forgotPassword(request):
             return HttpResponse(
                 json.dumps({"msg": "Password changed successfully."}),
             )
+        
+
+@csrf_exempt
+def addAppUser(request):
+    if request.method == 'POST':
+        uid = request.POST.get('uid')
+        email = request.POST.get('email')
+        loginmethod=request.POST.get('loginmethod')        
+
+        user = AppUser.objects.create(uid=uid,email=email,loginmethod=loginmethod)
+        user.save()
+        return HttpResponse(
+            json.dumps({"msg": "User created successfully."}),
+        )
+    
+
+@csrf_exempt
+def getRecyclers(request):
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        contactno=request.POST.get('contactno')
+        bnkno=request.POST.get('bno')
+        ifsc=request.POST.get('ifsc')
+        bnkname=request.POST.get('bnkname')
+        address=request.POST.get('address')
+        city=request.POST.get('city')
+        state=request.POST.get('state')
+        pincode=request.POST.get('pincode')
+
+
+        user = Recycler.objects.create(email=email,contactno=contactno,businessname=name,address=address,city=city,state=state,pincode=pincode,bankaccountname=bnkname,bankaccountno=bnkno,ifsc=ifsc)    
+        user.save()
+        return HttpResponse(
+            json.dumps({"msg": "Recycler details added successfully.","rid":user.id}),
+        )
+
+@csrf_exempt
+def getRecycler(request):
+    if request.method == 'GET':   
+        id=request.GET.get('rid')
+        user = Recycler.objects.get(id=id)
+        client_serialized = serializers.serialize("json", [user])
+                 
+        return HttpResponse(
+            client_serialized,content_type="application/json"
+        )     
+    
+@csrf_exempt
+def invoice(request):
+    if request.method == 'GET':     
+        id=request.GET.get('vendor')   
+        user=invoice.objects.get(vendor=id)
+        filename = f"{'kirtan Kathiriya'+'_'+str(1)}.pdf"
+        pdf_filename = filename.replace(' ','_')
+        pdf_path = f"{settings.MEDIA_ROOT}/pdfs/{pdf_filename}"  
+
+        template_path = settings.BASE_DIR / 'templetes' / 'invoice.html' # Adjust this path accordingly
+        template = get_template(template_path)
+
+        # Render the template with the client data
+        html = template.render()
+
+        # Create a PDF file
+        with open(pdf_path, 'w+b') as pdf_file:
+            pisa.CreatePDF(html, dest=pdf_file)
+
+        # Save the PDF file path to the newclient object
+        user.pdf = f'pdfs/{pdf_filename}'
+        user.save()
+        # Send email with PDF attachment
+        subject = 'Recycle E Invoice'
+        message = f'Thank you for submitting your details, {"Kirtan Kathiriya"}.\n\n'
+        message += f'Client Name: {"Kirtan Kathiriya"}\n'
+        message += f'Mobile No: {"+917990919934"}\n'
+        message += f'Address: {"A404 rahdhe flat"}\n'
+        message += f'Email: {"kirtankathiriya09@gmail.com"}\n'
+        
+        message += 'Please find attached PDF.'
+        newclient="kirtankathiriya09@gmail.com"
+
+        from_email = settings.EMAIL_HOST_USER  # Replace with your email
+        to_email = [newclient]
+
+        email_message = EmailMessage(subject, message, from_email, to_email)
+        email_message.attach_file(pdf_path)  # Attach the PDF file
+
+        try:
+            email_message.send()
+        except Exception as e:
+            print(f"Error sending email: {e}")
+        return HttpResponse(
+                json.dumps({"msg": " your details updated successfully."}),
+                content_type="application/json",
+            )
+          
 
         

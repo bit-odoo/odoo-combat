@@ -6,6 +6,7 @@ import logo from '/images/Recycle E.svg';
 import { FaRecycle } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
+import { RiGitPullRequestFill } from "react-icons/ri";
 
 const SidebarContext = React.createContext();
 
@@ -14,20 +15,20 @@ export default function Sidebar() {
 
   const sidebarItems = [
     {
-      path: '/home',
+      path: '/recycle-profile',
       icon: <FaUserAlt  size={20} />,
       text: 'Recycler Profile'
     },
     {
-      path: '/proxy-scheduler',
-      icon: <FaHeart   size={20} />,
-      text: 'Latest Adds'
-    },
-    {
-      path: '/reports',
+      path: '/recycle-process',
       icon: <FaRecycle size={20} />,
       text: 'Recycle Process',
       alert: true
+    },
+    {
+      path: '/request',
+      icon: <RiGitPullRequestFill  size={20} />,
+      text: 'Request',
     }
   ];
 
