@@ -20,11 +20,6 @@ export default function Sidebar() {
       text: 'Recycler Profile'
     },
     {
-      path: '/latest-adds',
-      icon: <FaHeart   size={20} />,
-      text: 'Latest Adds'
-    },
-    {
       path: '/recycle-process',
       icon: <FaRecycle size={20} />,
       text: 'Recycle Process',

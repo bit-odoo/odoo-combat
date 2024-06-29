@@ -5,7 +5,6 @@ import Layout from '../components/Layout/Layout';
 import Signup from '../components/userAccount/Signup';
 import Otpvarification from '../components/userAccount/Otpvarification';
 import Forgot from '../components/userAccount/Forgot';
-import LatestAdds from '../components/common/LatestAdds';
 import RecycleProcess from '../components/common/RecycleProcess';
 import RecycleProfile from '../components/common/RecycleProfile';
 import Request from '../components/admin/Request';
@@ -22,7 +21,6 @@ function AppRoutes() {
             <Route path='/forgot/verification' element={<Otpvarification/>}/>
             <Route path='/recycle-profile' element={<Layout><RecycleProfile/></Layout>}/>
             <Route path='/recycle-process' element={<Layout><RecycleProcess/></Layout>}/>
-            <Route path='/latest-adds' element={<Layout><LatestAdds/></Layout>}/>
             <Route path='/request' element={<Layout><Request/></Layout>}/>
             <Route path="/description/:id" element={<Layout><DescriptionPage/></Layout>} />
         </Routes>
