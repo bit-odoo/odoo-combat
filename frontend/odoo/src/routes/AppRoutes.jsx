@@ -9,6 +9,7 @@ import LatestAdds from '../components/common/LatestAdds';
 import RecycleProcess from '../components/common/RecycleProcess';
 import RecycleProfile from '../components/common/RecycleProfile';
 import Request from '../components/admin/Request';
+import DescriptionPage from '../pages/DescriptionPage';
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
             <Route path='/recycle-process' element={<Layout><RecycleProcess/></Layout>}/>
             <Route path='/latest-adds' element={<Layout><LatestAdds/></Layout>}/>
             <Route path='/request' element={<Layout><Request/></Layout>}/>
+            <Route path="/description/:id" element={<Layout><DescriptionPage/></Layout>} />
         </Routes>
     </Router>
   )
