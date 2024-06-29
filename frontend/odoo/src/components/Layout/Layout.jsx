@@ -1,13 +1,17 @@
-import React from 'react'
-import Header from '../common/Header'
+import React from 'react';
+import Header from '../common/Header';
+import Sidebar from '../common/Sidebar';
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
     <div>
-      <Header />
-      <main>{children}</main>
+      {/* <Header /> */}
+      <div style={{ display: 'flex', flexGrow: 1 }}>
+        <Sidebar />
+        <main style={{ flex: 1 }}>{children}</main>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
