@@ -32,7 +32,7 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 
 - Video : 
 
-- App Link : https://drive.google.com/drive/folders/1PTXPHmZt8CMGpzxeBpTuCbwqZ2DrzMSd
+- App Link : https://drive.google.com/file/d/1PYYmvO9c2oD9BIsji7ODNho4FcjlZmjj/view?usp=drivesdk
 
 - Live Dashboard : https://web-production-0635.up.railway.app/
 
