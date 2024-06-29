@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "522849586818",
+    "project_id": "odoo-combat-91a95",
+    "storage_bucket": "odoo-combat-91a95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522849586818:android:282be5c96713891c722e9b",
+        "android_client_info": {
+          "package_name": "com.example.odoo_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS9776h53ulNef9W6onlzYNrhj3dIm_AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
