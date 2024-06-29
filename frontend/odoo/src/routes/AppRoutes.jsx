@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from '../pages/Homepage';
 import Login from '../components/userAccount/Login';
@@ -11,8 +11,8 @@ function AppRoutes() {
   return (
     <Router>
         <Routes>
-            <Route path='/' element={<Homepage/>}/>
-            <Route path='/login' element={<Login/>}/>
+            <Route path='/home' element={<Homepage/>}/>
+            <Route path='/' element={<Login/>}/>
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/forgot' element={<Forgot/>}/>
             <Route path='/signup/verification' element={<Otpvarification/>}/>
