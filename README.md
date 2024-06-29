@@ -14,9 +14,9 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 </p>
 
 ## Technology Use
-<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F14068%2Fflutter&psig=AOvVaw2F3puFsZgNtCeWtPuxJeli&ust=1719750972375000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCmlOLpgIcDFQAAAAAdAAAAABAE" alt="" height="60" width="60" />
-<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AReact-icon.svg&psig=AOvVaw0DA1uyz-NKl0AVYE9msAwS&ust=1719751011725000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCAwPXpgIcDFQAAAAAdAAAAABAJ" alt="" height="60" width="60" />
-<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dbatisteo.vscode-django&psig=AOvVaw1A-cG6M94Hlxg7lp3mZ3ZZ&ust=1719751061303000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNin4YvqgIcDFQAAAAAdAAAAABAE" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://batisteo.gallerycdn.vsassets.io/extensions/batisteo/vscode-django/1.15.0/1703694028504/Microsoft.VisualStudio.Services.Icons.Default" alt="" height="60" width="60" />
 
 
 ## Our App 
