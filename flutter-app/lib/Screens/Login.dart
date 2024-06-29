@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:odoo_app/Colors.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'addpost.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -324,6 +326,7 @@ class _LoginState extends State<Login> {
                             onTap: () {
                               print("google sign in on action:");
                               // googleLogin(context);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>post()));
                             },
                             child: Container(
                                 height: height / 14.5,
