@@ -30,7 +30,7 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 
 ## 🔗 Links
 
-- Video : https://github.com/parthkevadiya504/odoo-combat/assets/124482639/b08ad962-36b4-458b-a65a-a5e9abad6956
+- Video : 
 
 - App Link : https://drive.google.com/drive/folders/1PTXPHmZt8CMGpzxeBpTuCbwqZ2DrzMSd
 
