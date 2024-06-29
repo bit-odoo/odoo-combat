@@ -62,5 +62,18 @@ def forgotPassword(request):
             return HttpResponse(
                 json.dumps({"msg": "Password changed successfully."}),
             )
+        
+
+@csrf_exempt
+def addAppUser(request):
+    if request.method == 'POST':
+        uid = request.POST.get('uid')
+        email = request.POST.get('email')
+        loginmethod=request.POST.get('loginmethod')        
+
+        user = AppUser.objects.create(uid=uid,email=email,loginmethod=loginmethod)
+        return HttpResponse(
+            json.dumps({"msg": "User created successfully."}),
+        )
 
         

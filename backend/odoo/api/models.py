@@ -13,11 +13,12 @@ class UserDetails(models.Model):
 
 class AppUser(models.Model):
     uid=models.CharField(max_length=200)
-    email=models.CharField(max_length=50)
+    email=models.CharField(max_length=50,null=True)
     contactno=models.CharField(max_length=13)
     username=models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     mode=models.CharField(max_length=10)
+    isBasicDetails=models.BooleanField(default=False)
 
     def __str__(self):
         return self.username
