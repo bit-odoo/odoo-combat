@@ -13,6 +13,12 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 <a href="" target="blank"><img align="center" src="https://github.com/parthkevadiya504/odoo-combat/assets/124482639/c771dc6a-bf4a-455b-8595-8120a5b253b9" height="50" width="60" /></a>
 </p>
 
+## Technology Use
+<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F14068%2Fflutter&psig=AOvVaw2F3puFsZgNtCeWtPuxJeli&ust=1719750972375000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCmlOLpgIcDFQAAAAAdAAAAABAE" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AReact-icon.svg&psig=AOvVaw0DA1uyz-NKl0AVYE9msAwS&ust=1719751011725000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCAwPXpgIcDFQAAAAAdAAAAABAJ" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dbatisteo.vscode-django&psig=AOvVaw1A-cG6M94Hlxg7lp3mZ3ZZ&ust=1719751061303000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNin4YvqgIcDFQAAAAAdAAAAABAE" alt="" height="60" width="60" />
+
+
 ## Our App 
 ![image](https://github.com/parthkevadiya504/odoo-combat/assets/124482639/037d17fe-3434-41b5-bfdb-6dedb566b6ae)
 

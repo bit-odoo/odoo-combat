@@ -80,7 +80,7 @@ function Forgot() {
           <p className='my-3'>By signing in or creating an account, you agree with our <span className='font-bold underline'>Terms & Conditions</span> and <span className='font-bold underline'>Privacy Statement</span></p>
         </div>
         <div className='md:w-1/2 w-full justify-center items-center md:h-auto h-64 hidden md:block'>
-          <img src="https://images.pexels.com/photos/13608798/pexels-photo-13608798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
+          <img src="https://plus.unsplash.com/premium_photo-1681488048176-1cd684f6be8a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
         </div>
       </div>
     </div>
