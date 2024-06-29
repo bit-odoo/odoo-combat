@@ -35,6 +35,25 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Recycler(models.Model):
+    
+    email=models.CharField(max_length=50,null=True)
+    contactno=models.CharField(max_length=13)
+    businessname=models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    city=models.CharField(max_length=100)
+    state=models.CharField(max_length=50)
+    pincode=models.CharField(max_length=6)
+    bankaccountname=models.CharField(max_length=200)
+    bankaccountno=models.CharField(max_length=200)
+    ifsc=models.CharField(max_length=20)
+    image=models.ImageField(upload_to="recycler-images/",null=True)
+    
+    
+
+    def __str__(self):
+        return self.businessname
 
 
 

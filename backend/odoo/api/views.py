@@ -72,8 +72,31 @@ def addAppUser(request):
         loginmethod=request.POST.get('loginmethod')        
 
         user = AppUser.objects.create(uid=uid,email=email,loginmethod=loginmethod)
+        user.save()
         return HttpResponse(
             json.dumps({"msg": "User created successfully."}),
+        )
+    
+
+@csrf_exempt
+def getRecyclers(request):
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        contactno=request.POST.get('contactno')
+        bnkno=request.POST.get('bno')
+        ifsc=request.POST.get('ifsc')
+        bnkname=request.POST.get('bnkname')
+        address=request.POST.get('address')
+        city=request.POST.get('city')
+        state=request.POST.get('state')
+        pincode=request.POST.get('pincode')
+
+
+        user = Recycler.objects.create(email=email,contactno=contactno,businessname=name,address=address,city=city,state=state,pincode=pincode,bankaccountname=bnkname,bankaccountno=bnkno,ifsc=ifsc)    
+        user.save()
+        return HttpResponse(
+            json.dumps({"msg": "Recycler details added successfully.","rid":user.id}),
         )
 
         
