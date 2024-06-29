@@ -54,6 +54,15 @@ class Recycler(models.Model):
 
     def __str__(self):
         return self.businessname
+    
+
+class invoice(models.Model):
+    vendor=models.CharField(max_length=200)
+    pdf=models.FileField(upload_to="invoice/",null=True)
+
+
+    def __str__(self): 
+        return self.vendor   
 
 
 

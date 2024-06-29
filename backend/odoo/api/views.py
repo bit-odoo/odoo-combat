@@ -4,7 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
+from xhtml2pdf import pisa
 from django.core import serializers
+from django.template.loader import get_template
+from django.conf import settings
+from django.core.mail import EmailMessage
 
 # Create your views here.
 @csrf_exempt
@@ -110,5 +114,54 @@ def getRecycler(request):
         return HttpResponse(
             client_serialized,content_type="application/json"
         )     
+    
+@csrf_exempt
+def invoice(request):
+    if request.method == 'GET':     
+        id=request.GET.get('vendor')   
+        user=invoice.objects.get(vendor=id)
+        filename = f"{'kirtan Kathiriya'+'_'+str(1)}.pdf"
+        pdf_filename = filename.replace(' ','_')
+        pdf_path = f"{settings.MEDIA_ROOT}/pdfs/{pdf_filename}"  
+
+        template_path = settings.BASE_DIR / 'templetes' / 'invoice.html' # Adjust this path accordingly
+        template = get_template(template_path)
+
+        # Render the template with the client data
+        html = template.render()
+
+        # Create a PDF file
+        with open(pdf_path, 'w+b') as pdf_file:
+            pisa.CreatePDF(html, dest=pdf_file)
+
+        # Save the PDF file path to the newclient object
+        user.pdf = f'pdfs/{pdf_filename}'
+        user.save()
+        # Send email with PDF attachment
+        subject = 'Recycle E Invoice'
+        message = f'Thank you for submitting your details, {"Kirtan Kathiriya"}.\n\n'
+        message += f'Client Name: {"Kirtan Kathiriya"}\n'
+        message += f'Mobile No: {"+917990919934"}\n'
+        message += f'Address: {"A404 rahdhe flat"}\n'
+        message += f'Email: {"kirtankathiriya09@gmail.com"}\n'
+        
+        message += 'Please find attached PDF.'
+        newclient="kirtankathiriya09@gmail.com"
+
+        from_email = settings.EMAIL_HOST_USER  # Replace with your email
+        to_email = [newclient]
+
+        email_message = EmailMessage(subject, message, from_email, to_email)
+        email_message.attach_file(pdf_path)  # Attach the PDF file
+
+        try:
+            email_message.send()
+        except Exception as e:
+            print(f"Error sending email: {e}")
+        return HttpResponse(
+                json.dumps({"msg": " your details updated successfully."}),
+                content_type="application/json",
+            )
+          
 
         
