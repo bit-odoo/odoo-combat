@@ -32,9 +32,9 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 
 - Video : https://github.com/parthkevadiya504/odoo-combat/assets/124482639/b08ad962-36b4-458b-a65a-a5e9abad6956
 
-- Live Dashboard : https://github.com/parthkevadiya504/odoo-combat/assets/124482639/b08ad962-36b4-458b-a65a-a5e9abad6956
+- App Link : https://drive.google.com/drive/folders/1PTXPHmZt8CMGpzxeBpTuCbwqZ2DrzMSd
 
-- Live Dashboard : https://github.com/parthkevadiya504/odoo-combat/assets/124482639/b08ad962-36b4-458b-a65a-a5e9abad6956
+- Live Dashboard : https://web-production-0635.up.railway.app/
 
 
 
