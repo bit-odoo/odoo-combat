@@ -32,7 +32,7 @@ function Login() {
           setTimeout(() => {
             localStorage.setItem("email", email);
             localStorage.setItem("isadmin", isadmin);
-            navigateTo("/home/");
+            navigateTo("/recycle-profile/");
           }, 1000);
         } else {
           alert("Login failed!");
