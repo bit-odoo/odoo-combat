@@ -14,9 +14,11 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 </p>
 
 ## Technology Use
+<p align="center">
 <a href="" target="blank"><img align="center" src="https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg" alt="" height="60" width="60" />
 <a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" height="60" width="60" />
 <a href="" target="blank"><img align="center" src="https://batisteo.gallerycdn.vsassets.io/extensions/batisteo/vscode-django/1.15.0/1703694028504/Microsoft.VisualStudio.Services.Icons.Default" alt="" height="60" width="60" />
+</p>
 
 
 ## Our App 
