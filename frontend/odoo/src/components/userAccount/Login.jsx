@@ -47,7 +47,7 @@ function Login() {
     <div className='bg-gray-300 min-h-screen flex justify-center items-center'>
     <div className='bg-white rounded-2xl shadow-lg flex flex-col md:flex-row p-5 max-w-4xl m-5 w-full'>
       <div className='md:w-1/2 w-full flex justify-center items-center md:h-auto h-64'>
-        <img src="https://cdn.dribbble.com/userupload/14898990/file/original-ba68e98ea10e1867e831884c3b153387.png?resize=1504x1128&vertical=center" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
+        <img src="https://images.unsplash.com/photo-1620509048004-415ebb9e2755?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
       </div>
       <div className='md:w-1/2 w-full md:p-10 p-5 flex flex-col justify-center'>
         <h1 className='font-semibold text-3xl mb-2'>Holla,<br />Welcome Back</h1>
@@ -58,25 +58,25 @@ function Login() {
                 id="username"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} 
-                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#a653ea] sm:text-sm mb-4' placeholder="Enter your email" />
+                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-600 sm:text-sm mb-4' placeholder="Enter your email" />
 
           <label htmlFor="password" className='text-sm font-medium text-gray-700 sr-only'>Password</label>
           <input type="password" 
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)} 
-                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#a653ea] sm:text-sm mb-4' placeholder="Enter your password" />
+                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-600 sm:text-sm mb-4' placeholder="Enter your password" />
 
           <div className='flex items-center justify-between mb-6'>
             
-            <Link to='/forgot' className='text-sm text-[#a653ea] hover:underline'>Forgot Password?</Link>
+            <Link to='/forgot' className='text-sm text-[#0FC900] hover:underline'>Forgot Password?</Link>
           </div>
 
-          <button type="submit" onClick={handleSubmit} className='w-1/2 bg-[#a653ea] text-white py-2 px-4 my-5 rounded-md shadow-sm hover:bg-[#58327d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>Log In</button>
+          <button type="submit" onClick={handleSubmit} className='w-1/2 bg-black text-white py-2 px-4 my-5 rounded-md shadow-sm hover:bg-[#0FC900] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500'>Log In</button>
         </form>
 
         <p className='my-6 text-sm text-start text-gray-600'>
-          Don't have an account? <Link to="/signup" className='text-[#a653ea] hover:underline'>Sign Up</Link>
+          Don't have an account? <Link to="/signup" className='text-[#0FC900] hover:underline'>Sign Up</Link>
         </p>
       </div>
     </div>

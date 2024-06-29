@@ -9,4 +9,5 @@ urlpatterns = [
     path('rdetails/', views.getRecyclers, name='getRecyclers'),
     path('addAppUser/', views.addAppUser,name="addAppUser"),
     path('getRecycler/', views.getRecycler,name="getRecycler"),
+    path('pdf/', views.invoicefun,name="invoice"),
 ]

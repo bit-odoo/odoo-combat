@@ -2,16 +2,22 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Calendar, FileText, LogOut, Minimize2, Menu } from 'lucide-react';
-import logo from '/images/Recycle E.svg';
 import { FaRecycle } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { RiGitPullRequestFill } from "react-icons/ri";
+import { redirect, useNavigate } from "react-router-dom";
+import logo from "../../assets/images/Recycle-E.svg"
 
 const SidebarContext = React.createContext();
 
 export default function Sidebar() {
+  const navigateTo = useNavigate();
   const [expanded, setExpanded] = React.useState(true);
+  
+  const handleLogout = () => {
+    //localStorage.clear();
+    navigateTo("/");
+}
 
   const sidebarItems = [
     {
@@ -61,7 +67,7 @@ export default function Sidebar() {
           <LogOut />
           <div className={`flex justify-between items-center overflow-hidden ${expanded ? 'w-52 ml-3 p-3' : 'w-0'} transition-all`}>
             <div className="leading-4">
-              <h4 className="font-semibold">Log Out</h4>
+              <h4 onClick={handleLogout} className="font-semibold">Log Out</h4>
             </div>
           </div>
         </div>

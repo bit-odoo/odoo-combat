@@ -69,7 +69,7 @@ function Signup() {
           <p className='my-3'>By signing in or creating an account, you agree with our <span className='font-bold underline'>Terms & Conditions</span> and <span className='font-bold underline'>Privacy Statement</span></p>
         </div>
         <div className='md:w-1/2 w-full justify-center items-center md:h-auto h-64 hidden md:block'>
-          <img src="https://images.pexels.com/photos/13608798/pexels-photo-13608798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
+          <img src="https://media.istockphoto.com/id/1199233160/photo/green-recycle-bin-on-white-background.jpg?s=612x612&w=0&k=20&c=BXxqy1ZOyPQokbJoW1WVrss2SJ9rsP3Ju-2IN__va8U=" alt="login photo" className='w-full object-cover rounded-2xl md:h-full h-64' />
         </div>
       </div>
     </div>

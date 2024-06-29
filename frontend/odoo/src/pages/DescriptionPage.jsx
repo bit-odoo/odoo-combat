@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IoSend } from "react-icons/io5";
+const REACT_APP_SERVER = import.meta.env.VITE_REACT_APP_SERVER;
+import axios from "axios";
+import { redirect, useNavigate } from "react-router-dom";
 
 const requests = [
     {
@@ -35,6 +38,7 @@ function DescriptionPage() {
     }
 
     const handleNegotiateClick = () => {
+       
         setIsNegotiating(true);
     };
 
@@ -43,6 +47,22 @@ function DescriptionPage() {
         // Handle the negotiation submission logic here
         setIsNegotiating(false); // Optionally hide the input field after submission
     };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        axios
+        .get(`${REACT_APP_SERVER}/api/pdf/?vendor=${'kirtan kathiriya'}`)
+        .then((data) => {
+            if(data["data"])
+                {
+                    alert("check your email."); 
+                }
+         
+        })
+        .catch((error) => console.log(error));
+            
+          
+      };
 
     return (
         <div className="container mx-auto p-4">
@@ -67,7 +87,7 @@ function DescriptionPage() {
                     <p className="text-gray-700 text-xl font-bold mb-4">{request.price}</p>
 
                     <div className="flex space-x-4">
-                        <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Accept</button>
+                        <button onClick={handleSubmit} className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Accept</button>
                         <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
                         <button
                             className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"

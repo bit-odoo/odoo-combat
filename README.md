@@ -13,6 +13,14 @@ Our E-Waste Management System allows users to upload images of their e-waste and
 <a href="" target="blank"><img align="center" src="https://github.com/parthkevadiya504/odoo-combat/assets/124482639/c771dc6a-bf4a-455b-8595-8120a5b253b9" height="50" width="60" /></a>
 </p>
 
+## Technology Use
+<p align="center">
+<a href="" target="blank"><img align="center" src="https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" height="60" width="60" />
+<a href="" target="blank"><img align="center" src="https://batisteo.gallerycdn.vsassets.io/extensions/batisteo/vscode-django/1.15.0/1703694028504/Microsoft.VisualStudio.Services.Icons.Default" alt="" height="60" width="60" />
+</p>
+
+
 ## Our App 
 ![image](https://github.com/parthkevadiya504/odoo-combat/assets/124482639/037d17fe-3434-41b5-bfdb-6dedb566b6ae)
 
